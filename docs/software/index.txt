@@ -1,0 +1,14 @@
+#mac
+https://manico.im/api/release_manager/downloads/me.imtx.MarkMark.zip?beta=1
+
+#mac #windows
+garageband
+
+#windows
+https://schiffer.tech
+
+#windows #linux
+https://okular.kde.org/download/
+
+#android
+https://winlator.com/

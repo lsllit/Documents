@@ -1,0 +1,428 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage{amsmath,amssymb,amsfonts,float}
+\usepackage[margin=100pt]{geometry}
+
+\usepackage{hyperref}
+
+\parindent 0px
+
+\title{calculus}
+
+\author{}
+
+\date{}
+
+\begin{document}
+\maketitle
+\centering
+
+\vspace{20pt}
+
+\tableofcontents
+
+\pagebreak
+
+\section{limits}
+
+\subsection{limits intro}
+
+\href{https://khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-2/a/limits-intro}{click me for an article about limits.}
+
+\vspace{30pt}
+
+we have this function:
+$$f(x)=\frac{x-1}{x-1}$$
+well, isn't this equal to $f(x)=1$
+you'd be right, but we must also put a constraint, so the way we could simplify the function is:
+$$f(x)=1,x \neq 1$$
+
+the graph of this function will be a line, but has a gap at the place where $x=1$... when $x=1$, y is undefined.
+
+as we approach $x=1$ from the left hand side, we could get as close to $x=1$ as we want, as long as we are not exactly at $x=1$.
+
+the same is true for the right hand side.
+
+remember: a limit exists if it has the same value from the left hand side and the right hand side. if not, then the limit does not exist.
+
+therefore, the limit as x approaches 1 of f(x) is equal to 1
+
+$$\lim \limits_{x \to 1} f(x) = 1$$
+
+\vspace{30pt}
+
+we have the function:
+
+$$g(x) = \left\{ \begin{array}{l}
+  x^2,x\neq 2 \\
+  1, x=2 \\
+\end{array} \right \}$$
+
+so normally, f(x) is equal to $x^2$, except when $x=2$, then f(x) would be equal to 1
+
+we could make x closer and closer to 2, but never equal to 2:
+
+$$\begin{array}{l}
+  x=1,y=1\\
+  x=1.5,y=2.25\\
+  x=1.9,y=3.61\\
+  x=1.999,y=3.996\\
+\end{array}$$
+
+that was from the left hand side. from the right hand side, the limit also approaches 4.
+
+remember: a limit exists if it has the same value from the left hand side and the right hand side. if not, then the limit does not exist.
+
+so, the limit as x approaches 2 of g(x) is equal to 4.
+
+$$\lim \limits_{x \to 2} g(x) = 4$$
+
+\vspace{30pt}
+
+when the limit from the left hand side is infinity, and the limit from the right hand side is infinity, we could say that the limit in unbounded.
+
+this goes the same if both the left hand side and the right hand side approaches negative infinity. but if one approaches positive infinity and the other approaches negative infinity, we can safely say that the limit does not exist.
+
+
+\subsection{one-sided limits}
+
+we have a function, f(x)
+
+let us assume that the limit as we approach $x=-1$ from the left hand side is 5
+
+but the limit as we approach $x=-1$ from the right hand side is 7
+
+this means that the limit as x approaches negative one of f(x) does not exist.
+
+$$\lim \limits_{x \to -1} f(x) \,\,\, \text{does not exist}$$
+
+but we have a way to express one-sided limits as well.
+
+the limit of f(x) as we approach $x=-1$ from the left hand side is 5:
+$$\lim \limits_{x \to -1^-} g(x) = 5$$
+
+the limit of f(x) as we approach $x=-1$ from the right hand side is 7:
+$$\lim \limits_{x \to -1^+} g(x) = 7$$
+
+\subsection{limit properties}
+assume a, b, c, L and M are constants, and that the following two equations are true.
+$$\lim \limits_{x \to c} f(x) = L$$
+$$\lim \limits_{x \to c} g(x) = M$$
+
+\begin{itemize}
+  \item $\lim \limits_{x \to c} \left( f(x)+g(x) \right) = \lim \limits_{x \to c} f(x) + \lim \limits_{x \to c} g(x) = L+M$
+  \item $\lim \limits_{x \to c} \left( f(x)-g(x) \right) = \lim \limits_{x \to c} f(x) - \lim \limits_{x \to c} g(x) = L-M$
+  \item $\lim \limits_{x \to c} \left( f(x)g(x) \right) = \lim \limits_{x \to c} f(x) * \lim \limits_{x \to c} g(x) = L*M$
+  \item $\lim \limits_{x \to c} \left( \dfrac{f(x)}{g(x)} \right) = \dfrac{ \lim \limits_{x \to c} f(x) }{ \lim \limits_{x \to c} g(x) } = \dfrac{L}{M}$
+  \item $\lim \limits_{x \to c} \left( f(x) \right) ^{\dfrac{a}{b}} = L^{\dfrac{a}{b}}$
+\end{itemize}
+
+yes, that seems intuitive. but for another strategy, remember THIS: even if one of the limits does not exist, that does not mean that the altogether limit does not exist. :/
+
+HERE is another rule that should be quite intuitive too, and it applies not only to multiplication, but for addition, subtraction and division too:
+
+$$\lim \limits_{x \to c^-} \left( f(x)g(x) \right) = \lim \limits_{x \to c^-} f(x) * \lim \limits_{x \to c^-} g(x)$$
+$$\lim \limits_{x \to c^+} \left( f(x)g(x) \right) = \lim \limits_{x \to c^+} f(x) * \lim \limits_{x \to c^+} g(x)$$
+
+that should be helpful.
+
+\vspace{40pt}
+
+\subsection{limits of combined functions}
+
+\href{https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-5a/v/limits-of-combined-functions-piecewise}{here is the intro video about the limits of combined functions.}
+
+\vspace{20pt}
+
+if $\lim \limits_{x \to c}g(x)$ exists, and f(x) is continuous at $x = \lim \limits_{x \to c}g(x)$, then $\lim \limits_{x \to c} f(g(x)) = f(\lim \limits_{x \to c}g(x))$ , if conditions not met, you will need to use the technique demonstrated \href{https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-5a/v/limits-of-composite-functions-external-limit-doesn-t-exist}{here}. that technique might be confusing, but learn it throughly!
+
+\vspace{20pt}
+
+basically, even if the limits of each of the two functions at that point does not exist, it exists for the combined function if the sum of the two limits from the left hand side is equal to the sum of the limits from the right.
+
+for revision, consider watching the videos after the intro video about the limits of combined functions, especially \href{https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-5a/v/limits-of-composite-functions-internal-limit-doesn-t-exist}{this one}
+
+\vspace{30pt}
+\subsection{intermediate limits}
+in \href{https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-6/v/limits-by-rationalizing}{this video}, there is a harder function, and we calculated its limit to be $\dfrac{0}{0}$...
+
+well, for harder functions like this, with more manipulation, we could actually find the answer. practise them with exercises \href{https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-6/e/two-sided-limits-using-algebra}{here},\href{https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-6/e/limits_2}{here}, and \href{https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-6/e/find-limits-using-trig-identities}{here}.
+
+you know, you could open up those exercises, and start learning how to do complicated limits calculations with factoring, conjugates, and trig identties! good luck.
+
+\subsubsection{problem 1}
+
+find:
+$$\lim \limits_{x \to -4} \frac{7x+28}{x^2+x-12}$$
+
+okay, we could factor this a bit.
+
+$$\lim \limits_{x \to -4} \frac{7(x+4)}{(x+4)(x-3)}$$
+$$\lim \limits_{x \to -4} \frac{7}{x-3}$$
+
+this function is undefined at $x=3$, but it is continuous except for at $x=3$. we can safely say that:
+$$\lim \limits_{x \to -4} \frac{7}{x-3} = \frac{7}{-7} = -1$$
+
+\subsubsection{problem 2}
+
+find:
+$$\lim \limits_{x \to -3} \frac{\sqrt{4x+28}-4}{x+3}$$
+
+let us rationalize the numerator.
+$$\lim \limits_{x \to -3} \frac{\sqrt{4x+28}-4}{x+3}*\frac{\sqrt{4x+28}+4}{\sqrt{4x+28}+4}$$
+
+$$\lim \limits_{x \to -3} \frac{(4x+28)-4^2}{(x+3)(\sqrt{4x+28}+4)}$$
+$$\lim \limits_{x \to -3} \frac{4x+12}{(x+3)(\sqrt{4x+28}+4)}$$
+$$\lim \limits_{x \to -3} \frac{4(x+3)}{(x+3)(\sqrt{4x+28}+4)}$$
+$$\lim \limits_{x \to -3} \frac{4}{\sqrt{4x+28}+4}\text{, for x }\neq -3$$
+
+now we can use direct substitution:
+
+$$\lim \limits_{x \to -3} \frac{4}{\sqrt{4x+28}+4} = \frac{4}{\sqrt{-12+28}+4} = \frac{4}{8} = \frac{1}{2}$$
+
+\subsubsection{problem 3}
+find:
+$$\lim \limits_{\theta \to -\frac{\pi}{4}} \frac{1+\sqrt{2}\sin(\theta)}{\cos(2\theta)}$$
+
+well, we can use trig identities:
+$$\cos(2\theta)=\cos^2(\theta)-\sin^2(\theta)=1-2\sin^2(\theta)=2\cos^2(\theta)-1$$
+
+we could factor:
+$$1-2\sin^2(\theta) = (1+\sqrt{2}\sin(\theta))(1-\sqrt{2}\sin(\theta))$$
+
+$$\lim \limits_{\theta \to -\frac{\pi}{4}} \frac{1+\sqrt{2}\sin(\theta)}{(1+\sqrt{2}\sin(\theta))(1-\sqrt{2}\sin(\theta))}$$
+$$\lim \limits_{\theta \to -\frac{\pi}{4}} \frac{1}{1-\sqrt{2}\sin(\theta)} \text{, }\theta \neq \frac{\pi}{4}$$
+
+almost done...
+
+$$\frac{1}{1-\sqrt{2}\sin\left(\dfrac{-\pi}{4}\right)} = \frac{1}{2}$$
+
+\subsubsection{problem 4}
+find:
+$$\lim \limits_{x \to \frac{\pi}{2}} \frac{\cot^2(x)}{1-\sin(x)}$$
+
+expand cotangent
+$$\lim \limits_{x \to \frac{\pi}{2}} \frac{\cos^2(x)}{\sin^2(x)(1-\sin(x))}$$
+
+apply pythagorean identity
+$$\lim \limits_{x \to \frac{\pi}{2}} \frac{(1-\sin^2(x))}{\sin^2(x)(1-\sin(x))}$$
+
+difference of squares
+$$\lim \limits_{x \to \frac{\pi}{2}} \frac{(1-\sin(x))(1+\sin(x))}{\sin^2(x)(1-\sin(x))}$$
+
+$$\lim \limits_{x \to \frac{\pi}{2}} \frac{1+\sin(x)}{\sin^2(x)}$$
+$$\frac{1+\sin(\frac{\pi}{2})}{\sin^2(\frac{\pi}{2})} = 2$$
+
+\subsection{squeeze theorem}
+let's say we have three functions, and $f(x) \leq g(x) \leq h(x)$
+
+if $\lim \limits_{x \to c} f(x) = L$ and $\lim \limits_{x \to c} h(x) = L$, we can conclude that $\lim \limits_{x \to c} g(x) = L$
+
+
+
+
+\subsection{conclusion}
+
+review the strategies to find a limit \href{https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-7/a/limit-strategies-flow-chart}{here}
+
+
+\section{continuity}
+
+\subsection{types of discontinuities}
+
+there are three types of discontinuities, as described in \href{https://www.khanacademy.org/math/ap-calculus-ab/ab-limits-new/ab-1-10/v/types-of-discontinuities}{this video}
+
+1. point/removable discontinuity
+
+2. jump discontinuity
+
+3. asymptotic discontinuity
+
+\subsection{definition}
+
+f is continuous at x=c if and only if $\lim \limits_{x \to c}f(x) = f(c)$
+
+\vspace{30pt}
+
+\subsection{intermediate value theorem}
+
+Suppose $f$ is a function continuous at every point of the interval [a,b] (including).
+
+This means that $f$ will take on every value between f(a) and f(b) over the interval.
+
+For any L between the values f(a) and f(b), there exists a number c in [a,b] for which f(c)=L.
+
+This is straightforward.
+
+\pagebreak
+
+\section{derivative}
+
+the derivative of $f$ if $f'$, and the definition is:
+$$f'(c) = \lim \limits_{x \to c} \frac{f(x)-f(c)}{x-c}$$
+where c is a constant.
+
+this could also be represented as $\dfrac{d}{dx}\left[f(x)\right]$
+
+\vspace{20pt}
+this also means that for a function $f$, the equation of the tangent line at $x=c$ will be equal to $y-f(c)=f'(c)(x-c)$
+
+\subsubsection{example}
+write an equation of the line tangent to the graph of $f(x)=2x^2+7x-9$ at the point where $x=-3$.
+
+\begin{quote}
+  remember: for a function $f$, the equation of the tangent line at $x=c$ will be equal to $y-f(c)=f'(c)(x-c)$
+
+  also, $\dfrac{d}{dx}\left[f(x)+g(x)\right] = \dfrac{d}{dx}\left[f(x)\right] +\dfrac{d}{dx}\left[g(x)\right] = f'(x) + g'(x)$
+
+  and $f(c)$ is -12
+
+  $f'(c)$ is $\dfrac{d}{dx}\left[2x^2\right]+\dfrac{d}{dx}\left[7x\right]$, which is $4x+7$, which is $-5$ when $x=c=-3$
+
+  so the answer is $y+12=-5(x+3)$, or $-5x-27$
+\end{quote}
+
+\subsection{differentiability}
+for a point $x=c$ on function $f$: $f$ is not differentiable if $f$ is not continuous at $x=c$, or if $f$ has a sharp turn at $x=c$. in order for $f$ to be continuous at $x=c$, $\lim \limits_{x \to c}\dfrac{f(x)-f(c)}{x-c}$ must exist.
+
+if differentiable, then it must be continuous.
+
+\subsection{power rule}
+
+if $f(x) = x^n$ and $n\neq0$, then $f'(x)=n*x^{n-1}$
+
+this means that to get $\dfrac{d}{dx}\left[ \sqrt[3]{x^2} \right]$ at $x=8$
+
+we could evaluate $\dfrac{d}{dx}\left( x^{\dfrac{2}{3}} \right)$, which is equal to $\dfrac{2}{3}*x^{\left(\dfrac{2}{3}-1\right)}$, which is equal to $\dfrac{2}{3}*x^{-\dfrac{1}{3}}$
+
+substitute $x=8$, we get $\dfrac{2}{3}*8^{-\dfrac{1}{3}}$, which is equal to $\dfrac{1}{3}$
+\vspace{15pt}
+this means that if $y=x^13$, then $\dfrac{d}{dx}\left[ y \right] = 13x^{12}$
+
+\subsection{derivative rules part 1}
+
+\begin{itemize}
+\centering
+\item constant rule
+\item[] $$\dfrac{d}{dx}\left[A\right]=0$$
+
+\item variable rule
+\item[] $$\dfrac{d}{dx}\left[x\right] = 1$$
+
+\item constant multiple rule
+\item[] $$\dfrac{d}{dx}\left[A*f(x)\right] = A*\dfrac{d}{dx}\left[f(x)\right] = A*f'(x)$$
+
+\item sum rule
+\item[] $$\dfrac{d}{dx}\left[f(x)+g(x)\right] = \dfrac{d}{dx}\left[f(x)\right] +\dfrac{d}{dx}\left[g(x)\right] = f'(x) + g'(x)$$
+
+\item difference rule
+\item[] $$\dfrac{d}{dx}\left[f(x)-g(x)\right] = \dfrac{d}{dx}\left[f(x)\right] -\dfrac{d}{dx}\left[g(x)\right] = f'(x) - g'(x)$$
+\end{itemize}
+
+\subsubsection{differentiating polynomials}
+
+$$f(x) = x^5+2x^3-x^2$$
+$$f'(x) = \dfrac{d}{dx}\left[f(x)\right] = \dfrac{d}{dx}\left[x^5+2x^3-x^2\right]$$
+$$f'(x) = \dfrac{d}{dx}\left[x^5\right] + \dfrac{d}{dx}\left[2x^3\right] - \dfrac{d}{dx}\left[x^2\right]$$
+$$f'(x) = 5x^4+6x^2-2x^1$$
+
+
+\subsection{derivatives rules part 2}
+$$\dfrac{d}{dx}\left[\sin(x)\right] = \cos(x)$$
+$$\dfrac{d}{dx}\left[\cos(x)\right] = -\sin(x)$$
+$$\dfrac{d}{dx}\left[e^x\right] = e^x$$
+$$\dfrac{d}{dx}\left[\ln(x)\right] = \frac{1}{x} = x^{-1}$$
+$$\dfrac{d}{dx}\left[\tan(x)\right] = \frac{1}{\cos^2(x)} = \sec^2(x)$$
+$$\dfrac{d}{dx}\left[\cot(x)\right] = \frac{-1}{\sin^2(x)} = -\csc^2(x)$$
+$$\dfrac{d}{dx}\left[\sec(x)\right] = \frac{\sin(x)}{\cos^2(x)} = \tan(x)*\sec(x)$$
+$$\dfrac{d}{dx}\left[\csc(x)\right] = \frac{-\cos(x)}{\sin^2(x)} = -\cot(x)*\csc(x)$$
+$$\text{if }a>0\text{, }\dfrac{d}{dx}\left[a^x\right] = \ln(a)*a^x$$
+$$\text{if }a>0\text{, and }a\neq1\text{, }\dfrac{d}{dx}\left[\log_a(x)\right] = \frac{1}{\ln(a)*x}$$
+
+\subsubsection{product rule}
+$$\dfrac{d}{dx}\left[f(x)g(x)\right] = f'(x)g(x)+f(x)g'(x)$$
+
+\subsubsection{quotient rule}
+$$\dfrac{d}{dx}\left[\frac{f(x)}{g(x)}\right] = \frac{f'(x)g(x)-f(x)g'(x)}{(g(x))^2}$$
+
+\subsubsection{chain rule}
+$$\dfrac{d}{dx}\left[f(g(x))\right] = f'(g(x))*g'(x)$$
+
+example:
+$$\dfrac{d}{dx}\left[\ln(\sin(x))\right] = \frac{1}{\sin(x)}*\cos(x)$$
+
+\subsection{implicit differentiation}
+
+we have this very hard equation:
+$$x^2+(y-x)^3=28$$
+the graph of this equation is continuous, but the slope changes dramatically at different x values.
+
+take the derivative of this equation:
+$$\dfrac{d}{dx}\left[x^2+(y-x)^3\right] = \dfrac{d}{dx}\left[28\right]$$
+
+apply derivative rules:
+
+$$2x+3(y-x)^2(\frac{dy}{dx}-1)=0$$
+$$2x-3(y-x)^2+3(y-x)^2*\frac{dy}{dx}=0$$
+$$3(y-x)^2*\frac{dy}{dx}=3(y-x)^2-2x$$
+$$\frac{dy}{dx} = \frac{3(y-x)^2-2x}{3(y-x)^2}$$
+
+okay, realize how this derivative equation has x and y in it. this is what makes it an implicit differentiation.
+
+for an example of how implicit differs from using explicit differentiation, see \href{https://www.khanacademy.org/math/ap-calculus-ab/ab-differentiation-2-new/ab-3-2/v/showing-explicit-and-implicit-differentiation-give-same-result}{this video}
+
+\subsection{derivatives of inverse functions}
+
+the inverse of $f(x)$ is $f^{-1}(x)$.
+
+the derivative of $f(x)$ is $f'(x)$.
+
+$$f'(x) = \frac{1}{f^{-1}(f(x))}$$
+
+this is really exciting! also,
+
+$$\dfrac{d}{dx}\left[\sin^{-1}(x)\right] = \frac{1}{\sqrt{1-x^2}}$$
+$$\dfrac{d}{dx}\left[\cos^{-1}(x)\right] = -\frac{1}{\sqrt{1-x^2}}$$
+$$\dfrac{d}{dx}\left[\tan^{-1}(x)\right] = \frac{1}{1+x^2}$$
+
+\subsection{second derivatives}
+
+we can take the derivative of the derivative of a function. this is called the second derivative. the second derivative of $f$ is $\frac{d}{dx}\left[\frac{d}{dx}\left[f\right]\right]$, or $f''$
+
+\subsection{hidden derivatives}
+
+what is $\lim \limits_{x \to 0}\dfrac{3(2+x)^4-3(2)^4}{h}$
+
+this limit expression has the form:
+$$\lim \limits_{x \to 0}\dfrac{f(t+x)-f(t)}{x}$$
+
+we can tell that $t$, or the x value, is 2.
+
+this means that we need to evaluate $f'(2)$
+
+in this case, $f(x)=3x^4$, and $f'(x)=12x^3$
+
+so the answer is $f'(2)$, which is $12(2)^3$, which is $96$
+
+\subsection{related derivatives}
+
+the differentiable functions $f$ and $g$ are related by the following equation:
+$$\sin(f)+\cos(g)=\sqrt{2}$$
+
+also, $\dfrac{df}{dt}=5$
+
+find $\dfrac{dg}{dt}$ when $y=\dfrac{\pi}{4}$ and $0<x<\dfrac{\pi}{2}$
+
+let's take the derivative of the equation:
+$$\dfrac{d}{dt}\left[\sin(f(t))\right]++\dfrac{d}{dt}\left[\cos(g(t))\right]=\dfrac{d}{dt}\left[\sqrt{2}\right]$$
+$$\dfrac{d}{dt}\left[\sin(f)\right]*\dfrac{df}{dt}+\dfrac{d}{dt}\left[\cos(g)\right]*\dfrac{dg}{dt}=0$$
+
+in this case, $\dfrac{df}{dt}=5$ and $y=\dfrac{\pi}{4}$, and after solving for $g$ we know that $g=\dfrac{\pi}{4}$ so we can simplify:
+
+$$5*\cos(\dfrac{\pi}{4})-\dfrac{dy}{dt}*\sin(\dfrac{\pi}{4})=0$$
+$$5-\dfrac{dy}{dt}=0$$
+$$\dfrac{dy}{dt}=5$$
+
+
+\href{https://www.khanacademy.org/math/ap-calculus-ab/ab-diff-contextual-applications-new/ab-4-5/v/falling-ladder-related-rates}{here} is another example of a related rates problem.
+
+\end{document}
