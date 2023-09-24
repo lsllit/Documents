@@ -1,0 +1,57 @@
+conky.config = {
+
+background = true,
+use_xft = true,
+font = '123:size=5',
+xftalpha = 0.1,
+update_interval = 1,
+total_run_times = 0,
+own_window = true,
+own_window_type = 'normal',
+own_window_transparent = true,
+own_window_hints = 'undecorated,below,sticky,skip_taskbar,skip_pager',
+double_buffer = true,
+minimum_width = 250,
+minimum_height = 5,
+maximum_width = 200,
+draw_shades = false,
+draw_outline = false,
+draw_borders = false,
+draw_graph_borders = false,
+default_color = 'gray',
+default_shade_color = 'red',
+
+${font Arial:bold:size=6}${color #00AAFF}resources ${color #89faff}${hr 2}
+$font${color #505050}temp $alignr ${color #FFF}${exec sh -c "/usr/bin/vcgencmd measure_temp 2>/dev/null | cut -c6-9"} C
+$font${color #505050}1  ${color #FFF}${cpu cpu1}%${color #505050} ${cpubar cpu1}
+2  ${color #FFF}${cpu cpu2}%${color #505050} ${cpubar cpu2}
+3  ${color #FFF}${cpu cpu3}%${color #505050} ${cpubar cpu3}
+4  ${color #FFF}${cpu cpu4}%${color #505050} ${cpubar cpu4}
+${cpugraph #FFF #0000AA} $color
+
+${font Arial:bold:size=6}${color #00AAFF}short term memory ${color #89faff}${hr 2}
+$font${color #505050}memory $alignc ${color #FFF}$mem${color #505050} / $memmax $alignr $memperc%
+$membar
+$font${color #505050}swap $alignc ${color #FFF}$swap${color #505050} / $swapmax $alignr $swapperc%
+$swapbar
+
+${font Arial:bold:size=6}${color #00AAFF}long term memory ${color #89faff}${hr 2}
+$font${color #505050}/home $alignc ${color #FFF}${fs_used /home} / ${fs_size /home}${color #505050} $alignr ${fs_free_perc /home}%
+${fs_bar /home}
+
+${font Arial:bold:size=6}${color #00AAFF}thoughts ${color #89faff}${hr 2}
+${color #505050}$font${top_mem name 2}${alignr}${top mem 2} %
+$font${top_mem name 3}${alignr}${top mem 3} %
+$font${top_mem name 4}${alignr}${top mem 4} %
+$font${top_mem name 5}${alignr}${top mem 5} %
+
+${font Arial:bold:size=6}${color #00AAFF}communications ${color #89faff}${hr 2}
+$font${color #505050}IP $alignr ${color #FFF}${addr wlan0}
+
+${color #505050}reading $alignr ${color #FFF}${downspeed wlan0}/s
+${color #505050}saying $alignr ${color #FFF}${upspeed wlan0}/s
+
+${color #505050}read $alignr  ${color #FFF}${totaldown wlan0}
+${color #505050}said $alignr  ${color #FFF}${totalup wlan0}
+
+]]

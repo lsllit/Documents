@@ -28,6 +28,8 @@ alias ...='cd ../..'
 
 alias ....='cd ../../..'
 
+alias kill80='sudo lsof -t -i tcp:80 -s tcp:listen | sudo xargs kill'
+
 alias ls='ls --color=auto'
 alias lsa='ls -a'
 alias list='ls -Sgh'
@@ -74,6 +76,11 @@ alias whisperenglish='whisper --model base.en'
 alias largest='du -h -x -s -- * | sort -r -h'
 
 alias fm='sudo $HOME/fm_transmitter/fm_transmitter -f 88'
+
+alias mp3_wav='for i in *.mp3; do sox "$i" -c 2 -b 96 -r 48k "./$(basename -s .m
+p3 "$i").wav" -V; done'
+alias flac_wav='for i in *.flac; do sox "$i" -c 2 -b 96 -r 48k "./$(basename -s
+.flac "$i").wav" -V; done'
 
 alias mp3_wav='for i in *.mp3; do sox "$i" -c 2 -b 16 "./$(basename -s .mp3 "$i").wav" -V; done'
 alias flac_wav='for i in *.flac; do sox "$i" -c 2 -b 16 "./$(basename -s .flac "$i").wav" -V; done'
