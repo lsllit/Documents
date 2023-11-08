@@ -28,7 +28,7 @@ alias ...='cd ../..'
 
 alias ....='cd ../../..'
 
-alias kill80='sudo lsof -t -i tcp:80 -s tcp:listen | sudo xargs kill'
+
 
 alias ls='ls --color=auto'
 alias lsa='ls -a'
@@ -64,7 +64,13 @@ alias down='shutdown -h now'
 alias tre='tree --dirsfirst -F -L 1'
 alias tree='tree --dirsfirst -F -L 3'
 
+
+alias kill80='sudo lsof -t -i tcp:80 -s tcp:listen | sudo xargs kill'
 alias mark='bash -c "sudo umount -f -q $HOME/Desktop/mark; sudo mount.cifs //192.168.0.6/mark $HOME/Desktop/mark/ -o username=mark,password=mark123"'
+
+alias mp3_wav='for i in *.mp3; do sox "$i" -c 2 -b 16 "./$(basename -s .mp3 "$i").wav" -V; done'
+alias flac_wav='for i in *.flac; do sox "$i" -c 2 -b 16 "./$(basename -s .flac "$i").wav" -V; done'
+
 
 alias mkdir='mkdir -p -v'
 
@@ -81,9 +87,6 @@ alias mp3_wav='for i in *.mp3; do sox "$i" -c 2 -b 96 -r 48k "./$(basename -s .m
 p3 "$i").wav" -V; done'
 alias flac_wav='for i in *.flac; do sox "$i" -c 2 -b 96 -r 48k "./$(basename -s
 .flac "$i").wav" -V; done'
-
-alias mp3_wav='for i in *.mp3; do sox "$i" -c 2 -b 16 "./$(basename -s .mp3 "$i").wav" -V; done'
-alias flac_wav='for i in *.flac; do sox "$i" -c 2 -b 16 "./$(basename -s .flac "$i").wav" -V; done'
 
 function p() {
     if [ "$1" -eq 0 ] 2>/dev/null; then
