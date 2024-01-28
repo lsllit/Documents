@@ -1,16 +1,21 @@
+#!/usr/bin/python3
 # pip install Pillow
 
 import os, glob, PIL, sys
 from PIL import Image
 
+print("note: this will only work if images are at the same level or below this script in the file tree.")
+
 quality = int(input("what is compression quality? input a number from 1 to 100: "))
 
 script_dir = os.path.dirname(os.path.abspath(__file__))
 
-input_dir = input("directory where the images are: ")
+print(f"script directory is at {script_dir}")
+
+input_dir = os.path.join(script_dir,input("directory where the images are, relative to script directory: "))
 assert os.path.isdir(input_dir)
 
-output_dir = input("directory where to save the images: ")
+output_dir = os.path.join(script_dir,input("directory where to save the images, relative to script directory: "))
 assert os.path.isdir(output_dir)
 
 # for png files, transparent means black
