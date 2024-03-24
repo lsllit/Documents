@@ -51,7 +51,7 @@ alias delete='sudo rm -r'
 alias tre='sudo tree --dirsfirst -F -L 1'
 alias tree='sudo tree --dirsfirst -F -L 3'
 
-alias largest='du -h -x -s -- * | sort -r -h | head -20;'
+alias largest='du -h -x -s -- * | sort -h'
 
 alias mkdir='mkdir -p -v'
 

@@ -49,7 +49,7 @@ alias tre='tree --dirsfirst -F -L 1'
 alias tree='tree --dirsfirst -F -L 3'
 
 alias mkdir='mkdir -p -v'
-alias largest='du -h -x -s -- * | sort -r -h'
+alias largest='du -h -x -s -- * | sort -h'
 
 function p() {
     if [ "$1" -eq 0 ] 2>/dev/null; then

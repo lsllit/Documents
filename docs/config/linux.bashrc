@@ -55,7 +55,7 @@ alias server='cd /var/www/html'
 alias whisperen='whisper --model tiny.en'
 alias whisperenglish='whisper --model base.en'
 
-alias largest='du -h -x -s -- * | sort -r -h'
+alias largest='du -h -x -s -- * | sort -h'
 
 alias fm='sudo $HOME/fm_transmitter/fm_transmitter -f 88'
 
